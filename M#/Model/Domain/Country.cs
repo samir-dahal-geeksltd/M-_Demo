@@ -7,6 +7,7 @@ namespace Domain
         public Country()
         {
             String("Name").Mandatory();
+            UniqueCombination(new[] { "Name" });
         }
     }
 }
