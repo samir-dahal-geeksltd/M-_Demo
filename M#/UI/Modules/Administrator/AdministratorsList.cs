@@ -30,7 +30,7 @@ namespace Modules
                 {
                     x.Go<Admin.Settings.Administrators.ViewPage>()
                     .SendReturnUrl()
-                    .Send("item", "item.ID");
+                    .SendItemId();
                 });
 
             Column(x => x.Email);
@@ -43,7 +43,7 @@ namespace Modules
                 .HeaderText("Actions")
                 .GridColumnCssClass("actions")
                 .Icon(FA.Edit)
-                .OnClick(x => x.PopUp<Admin.Settings.Administrators.EnterPage>().Send("item", "item.ID"));
+                .OnClick(x => x.PopUp<Admin.Settings.Administrators.EnterPage>().SendItemId());
 
             ButtonColumn("Delete")
                 .HeaderText("Actions")

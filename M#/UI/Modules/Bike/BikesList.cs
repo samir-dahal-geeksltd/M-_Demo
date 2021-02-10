@@ -24,7 +24,7 @@ namespace Modules
 
             ButtonColumn("Edit").Icon(FA.Edit)
                 .OnClick(x => x.Go<Bike.EnterPage>()
-                .Send("item", "item.ID")
+                .SendItemId()
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)

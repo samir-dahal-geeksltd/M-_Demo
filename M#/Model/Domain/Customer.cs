@@ -8,13 +8,13 @@ namespace Domain
         {
             Associate<Country>("Country");
 
-            String("Company name").Mandatory(value: false);
+            String("Company name");
 
-            Date("Contract start date").Mandatory(value: false);
+            Date("Contract start date");
 
-            OpenImage("Logo").Width(200).Height(80).Mandatory(value: false);
+            OpenImage("Logo").Width(200).Height(80);
 
-            OpenFile("Contract").Mandatory(value: false);
+            OpenFile("Contract");
         }
     }
 }

@@ -16,11 +16,15 @@ namespace Modules
 
             Column(x => x.Email);
 
-            ButtonColumn("Edit").HeaderText("Actions").GridColumnCssClass("actions").Icon(FA.Edit)
-                .OnClick(x => x.Go<Contact.EnterPage>()
-                .Send("item", "item.ID").SendReturnUrl(false));
 
-            ButtonColumn("Delete").HeaderText("Actions")
+            column.Edit<Contact.EnterPage>()
+                .HeaderText("Actions")
+                .GridColumnCssClass("actions")
+                .Icon(FA.Edit);
+            // .OnClick(x => x.Go<Contact.EnterPage>()
+            // .SendReturnUrl(false);
+
+            column.Delete().HeaderText("Actions")
                 .GridColumnCssClass("actions")
                 .ConfirmQuestion("Are you sure you want to delete this Contact?")
                 .CssClass("btn-danger")

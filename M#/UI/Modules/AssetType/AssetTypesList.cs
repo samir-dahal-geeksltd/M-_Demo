@@ -13,7 +13,7 @@ namespace Modules
             ButtonColumn("Edit").Icon(FA.Edit)
                 .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<AssetType.EnterPage>()
-                .Send("item", "item.ID")
+                .SendItemId()
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)

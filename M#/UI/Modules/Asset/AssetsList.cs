@@ -15,7 +15,7 @@ namespace Modules
             SearchButton("Search").OnClick(x => x.Reload());
 
             ButtonColumn("View").HeaderText("View").Icon(FA.SearchPlus)
-                .OnClick(x => x.Go<Asset.ViewPage>().Send("item", "item.ID").SendReturnUrl());
+                .OnClick(x => x.Go<Asset.ViewPage>().SendItemId().SendReturnUrl());
 
             Column(x => x.Code);
             Column(x => x.Name);
@@ -26,7 +26,7 @@ namespace Modules
             ButtonColumn("Edit").Icon(FA.Edit)
                 .HeaderText("Edit").GridColumnCssClass("actions")
                 .OnClick(x => x.Go<Asset.EnterPage>()
-                .Send("item", "item.ID")
+                .SendItemId()
                 .SendReturnUrl());
 
             ButtonColumn("Delete").Icon(FA.Remove)
